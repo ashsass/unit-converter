@@ -1,3 +1,28 @@
+* {
+   box-sizing: inherit; 
+}
+
+html {
+    font-size: 10px;
+}
+
 body {
     margin: 0;
+    font-size: 1.6rem;
+    box-sizing: border-box;
 }
+/* Hold off on styling - I'm getting lost and frustrated*/
+.main-container{
+    background: #1F2937;
+    position: absolute;
+    left: 50%;
+    top: 50%;/* positions the top left corner to the 50% mark on the body */
+    width: 50%;
+    height: 50rem;
+    margin-left: -1rem;
+    /* reposition to -1/2 width */
+    margin-top: -1rem;
+    /* reposition to -1/2 height */
+}
+
+
