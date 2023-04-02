@@ -10,19 +10,19 @@
 html {
     font-size: 10px;
     background: #000;
+    box-sizing: border-box;
 }
 
 body {
     margin: 0;
     font-size: 1.6rem;
-    box-sizing: border-box;
     color: #FFF;
     background: #000;
 }
 
 .root {
     text-align: center;
-    width: 70vw;
+    width: 40vw;
     margin: auto;
     margin-top: 15%;
     background: #1F2937;
@@ -30,13 +30,19 @@ body {
 
 header {
     background: #6943FF;
+    height: 20rem;
+    padding-top: 1rem;
+}
+
+
+section {
+    background: #273549;
+    height: 8rem;
+    width: 35vw;
+    margin: auto;
 }
 
 h2 {
     color: #CCC1FF;
-}
-
-section {
-    background: #273549;
-    height: 4rem;
+    padding-top: 1.5rem;
 }
