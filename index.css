@@ -9,6 +9,7 @@
 
 html {
     font-size: 10px;
+    font-family: 'Inter', sans-serif;
     background: #000;
     box-sizing: border-box;
 }
@@ -32,6 +33,14 @@ header {
     background: #6943FF;
     height: 20rem;
     padding-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+h1{
+    font-size: 2.8rem;
 }
 
 
@@ -45,4 +54,11 @@ section {
 h2 {
     color: #CCC1FF;
     padding-top: 1.5rem;
+    font-weight: 600;
+    font-size: 2rem;
+}
+
+.convert-result {
+    font-weight: 400;
+    font-size: 1.4rem;
 }
