@@ -1,6 +1,11 @@
-* {
-   box-sizing: inherit; 
-}
+/* Color scheme. Dark mode version:
+    background: #273549
+    div containers: #1F2937
+    h2: #CCC1FF
+    text: #fff
+    heading background: #6943FF
+    heading small boxborder: #B295FF
+*/
 
 html {
     font-size: 10px;
@@ -13,16 +18,6 @@ body {
 }
 /* Hold off on styling - I'm getting lost and frustrated*/
 .main-container{
-    background: #1F2937;
-    position: absolute;
-    left: 50%;
-    top: 50%;/* positions the top left corner to the 50% mark on the body */
-    width: 50%;
-    height: 50rem;
-    margin-left: -1rem;
-    /* reposition to -1/2 width */
-    margin-top: -1rem;
-    /* reposition to -1/2 height */
 }
 
 
