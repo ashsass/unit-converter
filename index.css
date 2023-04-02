@@ -1,28 +1,64 @@
-* {
-   box-sizing: inherit; 
-}
+/* Color scheme. Dark mode version:
+    background: #1F2937
+    div containers: #273549
+    h2: #CCC1FF
+    text: #fff
+    heading background: #6943FF
+    heading small boxborder: #B295FF
+*/
 
 html {
     font-size: 10px;
+    font-family: 'Inter', sans-serif;
+    background: #000;
+    box-sizing: border-box;
 }
 
 body {
     margin: 0;
     font-size: 1.6rem;
-    box-sizing: border-box;
+    color: #FFF;
+    background: #000;
 }
-/* Hold off on styling - I'm getting lost and frustrated*/
-.main-container{
+
+.root {
+    text-align: center;
+    width: 40vw;
+    margin: auto;
+    margin-top: 15%;
     background: #1F2937;
-    position: absolute;
-    left: 50%;
-    top: 50%;/* positions the top left corner to the 50% mark on the body */
-    width: 50%;
-    height: 50rem;
-    margin-left: -1rem;
-    /* reposition to -1/2 width */
-    margin-top: -1rem;
-    /* reposition to -1/2 height */
+}
+
+header {
+    background: #6943FF;
+    height: 20rem;
+    padding-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+h1{
+    font-size: 2.8rem;
 }
 
 
+section {
+    background: #273549;
+    height: 8rem;
+    width: 35vw;
+    margin: auto;
+}
+
+h2 {
+    color: #CCC1FF;
+    padding-top: 1.5rem;
+    font-weight: 600;
+    font-size: 2rem;
+}
+
+.convert-result {
+    font-weight: 400;
+    font-size: 1.4rem;
+}

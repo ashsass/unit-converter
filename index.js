@@ -30,3 +30,9 @@ function convert(num) {
     let lbs = num / 2.204
     massConversion.textContent = `${num} kg(s) = ${kgs} lb(s) | ${num} lb(s) = ${lbs} kg(s)`
 }
+
+/*
+To-Do
+-Set up styling
+-Refactor code big time
+*/
