@@ -16,23 +16,19 @@ convertBtn.addEventListener("click", function() {
 
 function convert(num) {
     // meter/feet
-    let feet = num * 3.281
-    let meter = num / 3.281
+    let feet = (num * 3.281).toFixed(3)
+    let meter = (num / 3.281).toFixed(3)
     lengthConversion.textContent = `${num} meter(s) = ${feet} feet | ${num} feet = ${meter} meter(s)`
 
     // liter/gallon
-    let liter = num / 0.264
-    let gallon = num * 0.264
+    let liter = (num / 0.264).toFixed(3)
+    let gallon = (num * 0.264).toFixed(3)
     volumeConversion.textContent = `${num} liter(s) = ${gallon} gallon(s) | ${num} gallon = ${liter} liter(s)`
 
     // kg/lbs
-    let kgs = num * 2.204
-    let lbs = num / 2.204
+    let kgs = (num * 2.204).toFixed(3)
+    let lbs = (num / 2.204).toFixed(3)
     massConversion.textContent = `${num} kg(s) = ${kgs} lb(s) | ${num} lb(s) = ${lbs} kg(s)`
 }
 
-/*
-To-Do
--Set up styling
--Refactor code big time
-*/
+
