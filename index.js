@@ -11,7 +11,9 @@ const volumeConversion = document.getElementById("volume")
 const massConversion = document.getElementById("mass")
 
 convertBtn.addEventListener("click", function() {
-    convert(convertInput.value)
+    if(convertInput.value){
+        convert(convertInput.value)
+    }
 })
 
 function convert(num) {
@@ -32,3 +34,4 @@ function convert(num) {
 }
 
 
+//Refactor the decimal place code and have it so that if that last number is 0 omit it from displaying 
