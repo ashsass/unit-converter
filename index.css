@@ -32,29 +32,31 @@ body {
 
 header {
     background: #6943FF;
-    height: 20rem;
+    height: 28rem;
     padding-top: 1rem;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
 }
 
 h1{
     font-size: 2.8rem;
+    margin: 0;
 }
 
 input#convert-input {
-    border: 0.1rem solid #B295FF;
+    border: 0.2rem solid #B295FF;
     background-color: #6943FF;
     font-family: 'Inter', sans-serif;
-    font-size: 4rem;
+    font-size: 6rem;
     font-weight: 800;
-    width: 10rem;
-    height: 8.5rem;
+    width: 12rem;
+    height: 8rem;
     text-align: center;
     color: white;
     padding: 1rem;
+    gap: 1rem;
 }
 
 input#convert-input:focus{
@@ -66,6 +68,14 @@ input::-webkit-inner-spin-button {
   display: none;
 }
 
+button {
+    width: 12rem;
+    height: 4rem;
+    border-radius: .5rem;
+    border: none;
+    background: #FFF;
+    cursor: pointer;
+}
 
 section {
     background: #273549;
