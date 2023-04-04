@@ -18,3 +18,4 @@ Link to the project:
 ### To-Do
 - [ ] Refactor JS
 - [ ] Have local storage remember the conversion and create a reset button to reset the data
+- [ ] Responsive sizing
