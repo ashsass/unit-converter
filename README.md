@@ -14,3 +14,7 @@ Link to the project:
 - HTML
 - Vanilla JavaScript
 - Figma (for design purposes)
+
+### To-Do
+- [ ] Refactor JS
+- [ ] Have local storage remember the conversion and create a reset button to reset the data
