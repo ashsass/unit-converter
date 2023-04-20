@@ -6,9 +6,17 @@
 
 const convertBtn = document.getElementById("convert-btn")
 const convertInput = document.getElementById("convert-input")
-const lengthConversion = 3.281
-const volumeConversion = 0.264
-const massConversion = 2.204
+const lengthConversion = 3.28084
+const volumeConversion = 0.264172
+const massConversion = 2.20462
+let conversion = {
+    meter: 0,
+    feet: 0,
+    liter: 0,
+    gallon: 0,
+    kilogram: 0,
+    pound: 0
+}
 
 convertBtn.addEventListener("click", function() {
     if(convertInput.value){
@@ -17,25 +25,25 @@ convertBtn.addEventListener("click", function() {
 })
 
 function convert(num) {
-    // meter/feet
-    let feet = (num * lengthConversion)
-    let meter = (num / lengthConversion)
-    
-    // liter/gallon
-    let liter = (num / volumeConversion).toFixed(3)
-    let gallon = (num * volumeConversion).toFixed(3)
-    
-    // kg/lbs
-    let kgs = (num * massConversion).toFixed(3)
-    let lbs = (num / massConversion).toFixed(3)
-    
+    //length
+   conversion.feet = lengthConversion * num
+   conversion.meter = (1/lengthConversion) * num 
+   //volume
+   conversion.gallon = volumeConversion * num
+   conversion.liter = (1/volumeConversion) * num 
+   //mass
+   conversion.pound = massConversion * num
+   conversion.kilogram = (1/massConversion) * num 
+   for(let value in conversion){
+        conversion[value] = conversion[value].toFixed(3)
+   }
+   render(num)
 }
 
 function render(num) {
-    convert(num)
-    document.getElementById("length").textContent = `${num} meter(s) = ${feet} feet | ${num} feet = ${meter} meter(s)`
-    document.getElementById("volume").textContent = `${num} liter(s) = ${gallon} gallon(s) | ${num} gallon(s) = ${liter} liter(s)`
-    document.getElementById("mass").textContent = `${num} kg(s) = ${kgs} lb(s) | ${num} lb(s) = ${lbs} kg(s)`
+    document.getElementById("length").textContent = `${num} meter(s) = ${conversion.feet} feet | ${num} feet = ${conversion.meter} meter(s)`
+    document.getElementById("volume").textContent = `${num} liter(s) = ${conversion.gallon} gallon(s) | ${num} gallon(s) = ${conversion.liter} liter(s)`
+    document.getElementById("mass").textContent = `${num} kg(s) = ${conversion.pound} lb(s) | ${num} lb(s) = ${conversion.kilogram} kg(s)`
 }
 
 //Refactor the decimal place code and have it so that if that last number is 0 omit it from displaying 
