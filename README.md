@@ -17,6 +17,6 @@ Link to the project:
 - Figma (for design purposes)
 
 ### To-Do
-- [ ] Refactor JS
-- [ ] Have local storage remember the conversion and create a reset button to reset the data
-- [ ] Responsive sizing
+- [x] Refactor JS
+- [x] Have local storage remember the conversion and create a reset button to reset the data
+- [x] Responsive sizing
