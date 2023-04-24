@@ -3,9 +3,6 @@
 1 liter = 0.264 gallon
 1 kilogram = 2.204 pound
 */
-
-const convertBtn = document.getElementById("convert-btn")
-const resetBtn = document.getElementById("reset-btn")
 const convertInput = document.getElementById("convert-input")
 const lengthConversion = 3.28084
 const volumeConversion = 0.264172
