@@ -5,6 +5,7 @@
 */
 
 const convertBtn = document.getElementById("convert-btn")
+const resetBtn = document.getElementById("reset-btn")
 const convertInput = document.getElementById("convert-input")
 const lengthConversion = 3.28084
 const volumeConversion = 0.264172
@@ -17,6 +18,14 @@ convertBtn.addEventListener("click", function() {
         convert(convertInput.value)
     }
 })
+
+resetBtn.addEventListener("click", function() {
+    localStorage.clear()
+    convertInput.value = ''
+    conversion = fetchConversionData()
+    render()
+})
+
 
 //After the input is converted it will render to the page and it will set the local storage 
 function convert(num) {
@@ -46,15 +55,27 @@ function setStorage() {
     localStorage.setItem("conversion", JSON.stringify(conversion))
 }
 
+
 //If local storage is available it will pull from that, if not it will pull from the reset value
 function render() {
-    document.getElementById("length").textContent = `${conversion.num} meter(s) = ${conversion.feet} feet | ${conversion.num} feet = ${conversion.meter} meter(s)`
-    document.getElementById("volume").textContent = `${conversion.num} liter(s) = ${conversion.gallon} gallon(s) | ${conversion.num} gallon(s) = ${conversion.liter} liter(s)`
-    document.getElementById("mass").textContent = `${conversion.num} kg(s) = ${conversion.pound} lb(s) | ${conversion.num} lb(s) = ${conversion.kilogram} kg(s)`
+    const {
+        num,
+        meter,
+        feet,
+        liter,
+        gallon,
+        kilogram,
+        pound
+    } = conversion //destructure conversion
+    //render information to page
+    document.getElementById("length").textContent = `${num} meter(s) = ${feet} feet | ${num} feet = ${meter} meter(s)`
+    document.getElementById("volume").textContent = `${num} liter(s) = ${gallon} gallon(s) | ${num} gallon(s) = ${liter} liter(s)`
+    document.getElementById("mass").textContent = `${num} kg(s) = ${pound} lb(s) | ${num} lb(s) = ${kilogram} kg(s)`
 }
 
 //Grabs local storage data or the reset value 
 function fetchConversionData() {
+    console.log(`fetchconversionData has been activated`)
     if(localStorage.getItem("conversion")){
         console.log(`Conversion is in local storage.`)
         return JSON.parse(localStorage.getItem("conversion"))
@@ -72,4 +93,4 @@ function fetchConversionData() {
     }
 }
 
-render(fetchConversionData())
+render()
