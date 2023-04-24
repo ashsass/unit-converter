@@ -112,7 +112,7 @@ h2 {
     padding: 1em;
 }
 
-@media only screen and (max-device-width: 1000px){
+@media only screen and (max-device-width: 1024px){
     .root{
         max-width: 80%;
     }
