@@ -12,20 +12,16 @@ const volumeConversion = 0.264172
 const massConversion = 2.20462
 let conversion = fetchConversionData()
 
-//When convert button is clicked the value will get converted to imperial/metric units
-convertBtn.addEventListener("click", function() {
-    if(convertInput.value){
-        convert(convertInput.value)
+document.addEventListener("click", function(e){
+    if(e.target.id === "convert-btn"){
+        if(convertInput.value){ //check if value has been input, if so render information to page
+            convert(convertInput.value)
+        }
+    }
+    else if(e.target.id === "reset-btn"){
+        resetStorage()
     }
 })
-
-resetBtn.addEventListener("click", function() {
-    localStorage.clear()
-    convertInput.value = ''
-    conversion = fetchConversionData()
-    render()
-})
-
 
 //After the input is converted it will render to the page and it will set the local storage 
 function convert(num) {
@@ -50,13 +46,38 @@ function convert(num) {
    render()
 }
 
+//Local storage functions
+//Grabs data from local storage, if none then creates base line values
+function fetchConversionData() {
+    if(localStorage.getItem("conversion")){
+        return JSON.parse(localStorage.getItem("conversion"))
+    }
+    else {
+        return {
+            num: 0,
+            meter: 0,
+            feet: 0,
+            liter: 0,
+            gallon: 0,
+            kilogram: 0,
+            pound: 0
+        } 
+    }
+}
+
 //Setting local storage
 function setStorage() {
     localStorage.setItem("conversion", JSON.stringify(conversion))
 }
 
+//Resets local storage, resets conversion object, clears input value, and re-renders page
+function resetStorage() {
+    localStorage.clear()
+    convertInput.value = ''
+    conversion = fetchConversionData()
+    render()
+}
 
-//If local storage is available it will pull from that, if not it will pull from the reset value
 function render() {
     const {
         num,
@@ -71,26 +92,6 @@ function render() {
     document.getElementById("length").textContent = `${num} meter(s) = ${feet} feet | ${num} feet = ${meter} meter(s)`
     document.getElementById("volume").textContent = `${num} liter(s) = ${gallon} gallon(s) | ${num} gallon(s) = ${liter} liter(s)`
     document.getElementById("mass").textContent = `${num} kg(s) = ${pound} lb(s) | ${num} lb(s) = ${kilogram} kg(s)`
-}
-
-//Grabs local storage data or the reset value 
-function fetchConversionData() {
-    console.log(`fetchconversionData has been activated`)
-    if(localStorage.getItem("conversion")){
-        console.log(`Conversion is in local storage.`)
-        return JSON.parse(localStorage.getItem("conversion"))
-    }
-    else {
-        return {
-            num: 0,
-            meter: 0,
-            feet: 0,
-            liter: 0,
-            gallon: 0,
-            kilogram: 0,
-            pound: 0
-        } 
-    }
 }
 
 render()
