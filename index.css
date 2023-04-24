@@ -75,6 +75,7 @@ button {
     border: none;
     background: #FFF;
     cursor: pointer;
+    margin: auto 1em;
 }
 
 section {
