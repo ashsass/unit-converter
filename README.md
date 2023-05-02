@@ -2,7 +2,7 @@
 ## Unit Converter
 A solo project from the front-end web developer bootcamp at [Scrimba](https://scrimba.com/). The requirements are to create a webpage that converts different measurements from metric to imperial units and vice versa. 
 
-Link to the project: 
+Link to the project: <a href="https://sassaman-unit-converter.netlify.app/" target="_blank">here</a>
 
 ### Requirements
 ![Image](./images/dark-mode.png)
