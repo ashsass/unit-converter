@@ -4,21 +4,23 @@
 1 kilogram = 2.204 pound
 */
 const convertInput = document.getElementById("convert-input")
+const btnContainer = document.querySelector('.btn-container')
 const lengthConversion = 3.28084
 const volumeConversion = 0.264172
 const massConversion = 2.20462
 let conversion = fetchConversionData()
 
-document.addEventListener("click", function(e){
-    if(e.target.id === "convert-btn"){
-        if(convertInput.value){ //check if value has been input, if so render information to page
-            convert(convertInput.value)
-        }
+btnContainer.addEventListener("click", function(e){
+    if(e.target.id === "convert-btn" && convertInput.value){
+    //check if value has been input, if so render information to page
+        convert(convertInput.value)
     }
     else if(e.target.id === "reset-btn"){
         resetStorage()
     }
 })
+
+render() 
 
 //After the input is converted it will render to the page and it will set the local storage 
 function convert(num) {
@@ -46,20 +48,16 @@ function convert(num) {
 //Local storage functions
 //Grabs data from local storage, if none then creates base line values
 function fetchConversionData() {
-    if(localStorage.getItem("conversion")){
-        return JSON.parse(localStorage.getItem("conversion"))
-    }
-    else {
-        return {
-            num: 0,
-            meter: 0,
-            feet: 0,
-            liter: 0,
-            gallon: 0,
-            kilogram: 0,
-            pound: 0
-        } 
-    }
+    const obj = {
+        num: 0,
+        meter: 0,
+        feet: 0,
+        liter: 0,
+        gallon: 0,
+        kilogram: 0,
+        pound: 0
+    } 
+    return JSON.parse(localStorage.getItem("conversion")) || obj
 }
 
 //Setting local storage
@@ -90,5 +88,3 @@ function render() {
     document.getElementById("volume").textContent = `${num} liter(s) = ${gallon} gallon(s) | ${num} gallon(s) = ${liter} liter(s)`
     document.getElementById("mass").textContent = `${num} kg(s) = ${pound} lb(s) | ${num} lb(s) = ${kilogram} kg(s)`
 }
-
-render()

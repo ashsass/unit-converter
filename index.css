@@ -15,7 +15,6 @@ html {
 }
 
 body {
-    margin: 0;
     font-size: 1.6rem;
     color: #FFF;
     background: #000;
@@ -65,7 +64,7 @@ input#convert-input:focus{
 
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
-  display: none;
+    display: none;
 }
 
 .btn-container{
